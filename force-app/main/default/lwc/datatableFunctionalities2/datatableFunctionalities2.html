@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Account Data">
+        <div slot="actions">
+            <lightning-button label="Create Account" title="Create Account" variant="brand" onclick={handleCreateAccount}></lightning-button>
+            <lightning-button label="Delete Accounts" title="Delete Accounts" variant="brand" onclick={handleDeleteSelectedAccounts} class="slds-p-left_small"></lightning-button>
+            <lightning-button label="Show Contacts" title="Show Contacts" variant="brand" onclick={handleShowContacts} class="slds-p-horizontal_small"></lightning-button>
+        </div>
+                            <!-- search field -->
+        <div>
+            <lightning-input type="search" onchange={hanldeSearch} value={name}></lightning-input>
+        </div>
+                         <!-- Account Datatable -->
+        <div style="height:400px">
+            <lightning-datatable 
+            key-field="Id"
+            data={data}
+            columns={columns}
+            onrowaction={handlerRowAction}
+            onrowselection={handlerRowSelection}
+            ></lightning-datatable>
+        </div>
+    
+    </lightning-card>
+</template>

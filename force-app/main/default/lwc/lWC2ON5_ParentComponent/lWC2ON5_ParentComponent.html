@@ -1,0 +1,16 @@
+<template>
+    <template if:true={data}>
+        <lightning-datatable
+        key-field="Id"
+        data={data}
+        columns={columns}
+        ></lightning-datatable>
+    </template>
+    
+    <div>
+        <c-l-w-c2-o-n-5_-child-component 
+        onnewaccid={accIdHandler}
+        ></c-l-w-c2-o-n-5_-child-component>
+    </div>
+    
+</template>

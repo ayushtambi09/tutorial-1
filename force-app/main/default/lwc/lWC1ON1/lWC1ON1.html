@@ -1,0 +1,82 @@
+<template>
+    <lightning-card title="1 On 1">
+        <div class="slds-m-around_medium">
+            <lightning-combobox
+            label="Account"
+            value={accId}
+            placeholder="Select Account"
+            options={options}
+            onchange={accountHandler} ></lightning-combobox>
+        </div>
+
+        <template if:true={accName}>
+            <div class="slds-p-vertical_medium">
+
+                <!-- <lightning-tabset>
+                    <lightning-tab label="Account Name">
+                        {accName}
+                    </lightning-tab>
+                    <lightning-tab label="Rating">
+                        {accRating}
+                    </lightning-tab>
+                    <lightning-tab label="Industry">
+                        {accIndustry}
+                    </lightning-tab>
+                    <lightning-tab label="Ownership">
+                        {accOwnership}
+                    </lightning-tab>
+                </lightning-tabset> -->
+
+
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-large-size_3-of-12">
+                        <p class="slds-p-horizontal_medium"><Strong>Account Name</Strong></p>
+                        <p class="slds-p-horizontal_medium"><Strong>Rating</Strong></p>
+                        <p class="slds-p-horizontal_medium"><Strong>Industry</Strong></p>
+                        <p class="slds-p-horizontal_medium"><Strong>Ownership</Strong></p> 
+                    </div>
+                    <div class="slds-col slds-large-size_1-of-12">
+                        <p class="slds-p-horizontal_medium"><Strong>:</Strong></p>
+                        <p class="slds-p-horizontal_medium"><Strong>:</Strong></p>
+                        <p class="slds-p-horizontal_medium"><Strong>:</Strong></p>
+                        <p class="slds-p-horizontal_medium"><Strong>:</Strong></p> 
+                    </div>
+                    <div class="slds-col slds-large-size_3-of-12">
+                        <p class="slds-p-horizontal_medium"><Strong>{accName}</Strong></p>
+                        <p class="slds-p-horizontal_medium"><Strong>{accRating}</Strong></p>
+                        <p class="slds-p-horizontal_medium"><Strong>{accIndustry}</Strong></p>
+                        <p class="slds-p-horizontal_medium"><Strong>{accOwnership}</Strong></p> 
+                    </div>
+                  </div>
+            </div> 
+        </template>
+        
+        <div>
+            <lightning-tabset variant="vertical">
+                <lightning-tab label="Contacts">
+                    <lightning-datatable
+                    key-field="Id"
+                    data={contactData}
+                    columns={conColumns}
+                    ></lightning-datatable>
+                </lightning-tab>
+                <lightning-tab label="Opportunity">
+                    <lightning-datatable
+                    key-field="Id"
+                    data={opportunityData}
+                    columns={OppColumns}
+                    ></lightning-datatable>
+                </lightning-tab>
+                <lightning-tab label="Cases">
+                    <lightning-datatable
+                    key-field="Id"
+                    data={caseData}
+                    columns={caseColumns}
+                    ></lightning-datatable>
+                </lightning-tab>
+            </lightning-tabset>
+        </div>
+        
+
+    </lightning-card>
+</template>

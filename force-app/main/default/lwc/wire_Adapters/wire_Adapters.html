@@ -1,0 +1,14 @@
+<template>
+    <div>
+        <lightning-card title="getRecord adapter">
+            <div class="slds-ma-round_medium">
+                <form class="createForm">
+                    <lightning-input label="First Name" name="FirstName" onchange={changeHandler}></lightning-input>
+                    <lightning-input label="Last Name" name="LastName" onchange={changeHandler}></lightning-input>
+                    <lightning-input label="Phone" name="Phone" onchange={changeHandler}></lightning-input>
+                    <lightning-button label="Create Account" variant="brand" onclick={clickHandler}></lightning-button>
+                </form>
+            </div>
+        </lightning-card>
+    </div>  
+</template>

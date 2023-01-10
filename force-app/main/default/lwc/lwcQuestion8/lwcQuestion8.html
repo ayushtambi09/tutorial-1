@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="ANS => 8">
+
+            <lightning-combobox
+                name="State"
+                label="State"
+                value={selectedState}
+                options={stateOptions}
+                onchange={stateHandler}
+                class="slds-m-around_medium">
+            </lightning-combobox>
+
+            <lightning-combobox
+                name="City"
+                label="City"
+                value={selectedCity}
+                options={cityOptions}
+                class="slds-m-around_medium">
+            </lightning-combobox>
+
+    </lightning-card>
+</template>

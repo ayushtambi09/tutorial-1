@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="ANS =>10">
+        <div class="slds-m-around_medium">
+            <lightning-combobox
+            name="Create Record"
+            label="Create Record"
+            options={objectOptions}
+            value={selectedObject}
+            onchange={objectHandler}
+            class="slds-m-around_medium"></lightning-combobox>
+
+            <template if:true={acc}>
+                <lightning-record-form
+                    object-api-name={accObject}
+                    fields={accFields}
+                    onsuccess={successHandler}>
+                </lightning-record-form>
+            </template>
+
+            <template if:true={con}>
+                <lightning-record-form
+                    object-api-name={conObject}
+                    fields={conFields}
+                    onsuccess={successHandler}>
+            </lightning-record-form>
+            </template>
+
+            <template if:true={opty}>
+                <lightning-record-form
+                    object-api-name={optyObject}
+                    fields={optyFields}
+                    onsuccess={successHandler}>
+            </lightning-record-form>
+            </template>
+        </div>
+    </lightning-card>
+</template>

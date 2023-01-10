@@ -1,0 +1,43 @@
+<template>
+    <div class="slds-box">
+        <div class="slds-p-around_medium" style="background-color:rgb(250, 142, 47)">
+            <lightning-input label="Enter Case Number" type="search" onkeyup={handleSearch}></lightning-input>
+
+
+            <template if:true={showData}>
+                <template if:true={cases}>
+                    <div class="slds-grid slds-wrap slds-gutters">
+                        <template for:each={cases} for:item="ca" >
+                            <div class="slds-col slds-size_1-of-2 slds-p-around_small" key={ca.Id}>
+
+                                <lightning-card title={ca.CaseNumber} class="slds-p-left_small">
+
+                                        <div slot="actions" data-record-id={ca.Id} onclick={handleCaseClosed}>
+                                            <template if:true={CloseLabel}>
+                                               <lightning-button label='Close Case' title="Close Case" variant="brand" onclick={handleCaseToClose}></lightning-button>
+                                            </template>
+                                            <template if:false={CloseLabel}>
+                                                <div><strong><i>Already Closed</i></strong></div>
+                                            </template>
+                                        </div>
+                                
+                                        <div class="slds-p-left_small"><strong>Case Number :&nbsp;{ca.CaseNumber}</strong></div>
+                                        <div class="slds-p-left_small"><strong>Status :&nbsp;{ca.Status}</strong></div>
+                                      
+                                        <div class="slds-size_1-of-2 slds-p-left_small">
+                                            <p class="slds-truncate"  title={ca.Description}> <strong>Description :</strong>&nbsp;{ca.Description}</p>
+                                        </div>
+
+                                </lightning-card>    
+                       
+                            </div>
+                        </template>
+                    </div>
+                </template>
+            </template>
+                
+            
+            
+        </div>
+    </div>
+</template>

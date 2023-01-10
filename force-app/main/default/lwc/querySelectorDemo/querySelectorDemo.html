@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="querySelector Demo">
+        <div class="slds-m-around_medium">
+            <div class="class1">{ContactInfo}</div>
+            
+
+            <template for:each={Account} for:item="name">
+                <div class="accInfo" key={name}>{name}</div>
+            </template>
+
+            <div class="blank">
+                
+            </div>
+
+            <lightning-button label="Click" onclick={clickHandler}></lightning-button>
+        </div>
+
+    </lightning-card>
+</template>

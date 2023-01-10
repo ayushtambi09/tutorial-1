@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="LWC 1 ON 4">
+ 
+        <div class="slds-m-around_medium">
+            <lightning-combobox
+            label="Select Opportunity StageName"
+            options={options}
+            onchange={stageNameHandler}
+            value={value}
+            ></lightning-combobox>
+
+            <template if:true={data}>
+                <div style="height:200px">
+                    <lightning-datatable
+                    key-field="Id"
+                    data={data}
+                    columns={columns}
+                    ></lightning-datatable>
+                </div>
+            </template>
+            
+        </div>
+    </lightning-card>
+</template>

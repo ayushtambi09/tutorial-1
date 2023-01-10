@@ -1,0 +1,60 @@
+<template>
+    <lightning-card title="ANS =>5">
+        <div class="slds-m-around_medium slds-grid slds-gutters">
+            
+            <!-- createRecord Column -->
+            <div class="slds-col">
+                <lightning-input label="Name" name="Name" value="Enter Name" onchange={changeHandler} class="inputFields"></lightning-input>
+
+                <lightning-combobox
+                    name="Rating"
+                    label="Rating"
+                    options={ratingOptions}
+                    onchange={changeHandler}
+                    placeholder="Select Rating"
+                    value={selectedRating}
+                    class="inputFields">
+                </lightning-combobox>
+                <lightning-combobox
+                    name="Industry"
+                    label="Industry"
+                    options={industryOptions}
+                    onchange={changeHandler}
+                    placeholder="Select Industry"
+                    value={selectedIndustry}
+                    class="inputFields">
+                </lightning-combobox>
+                <lightning-combobox
+                    name="Type"
+                    label="Type"
+                    options={typeOptions}
+                    onchange={changeHandler}
+                    placeholder="Select Type"
+                    value={selectedType}
+                    class="inputFields">
+                </lightning-combobox>
+                <lightning-combobox
+                    name="Ownership"
+                    label="Ownership"
+                    options={ownershipOptions}
+                    onchange={changeHandler}
+                    placeholder="Select Ownership"
+                    value={selectedOwnership}
+                    class="inputFields">
+                </lightning-combobox>
+                <lightning-input class="inputFields" label="Annual Revenue" name="AnnualRevenue" value="Enter AnnualRevenue" onchange={changeHandler}></lightning-input>
+                <lightning-button label="Save" title="Save" variant="brand" onclick={saveHandler} class="slds-m-around_medium"></lightning-button>
+            </div>
+
+            <div class="slds-col">
+                <lightning-datatable
+                    key-field="Id"
+                    data={newData}
+                    columns={columns}
+                    onrowaction={onRowActionHandler}>
+                </lightning-datatable>   
+            </div>
+            
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Create Record Demo 2">
+        <form class="formFields">
+            <div class="slds-m-around_medium">
+                <lightning-input label="First Name" name="FirstName" onchange={changeHandler}></lightning-input>
+                <lightning-input label="Last Name" name="LastName" onchange={changeHandler}></lightning-input>
+                <lightning-input label="Phone" name="Phone" onchange={changeHandler}></lightning-input>
+                <div class="slds-m-around_medium">
+                    <lightning-button label="Save" title="Save" onclick={saveHandler}></lightning-button>
+                </div>
+            </div>
+        </form>
+    </lightning-card>
+</template>

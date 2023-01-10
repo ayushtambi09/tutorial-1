@@ -1,0 +1,43 @@
+<template>
+    <lightning-card title="Search Related Contacts Of Account">
+        <div class="slds-m-around_medium">
+           
+            
+                    <lightning-input label="Search Account" type="search" onchange={searchHandler} value={accIds}></lightning-input>
+                <template if:true={hideAccounts}>
+                    <template if:true={accData}>
+                        <template for:each={accData} for:item="acc">
+                            <div class="slds-box" key={acc.Id} data-record-id={acc.Id} onclick={accIdHandler}>
+                                <div><strong>{acc.Name}</strong></div>
+                            </div>
+                        </template>
+                    </template>
+                </template>
+                    
+             
+            </div>
+            
+
+
+           
+            
+            <div class="slds-grid slds-wrap">
+            <template if:true={contacts}>
+                <template for:each={contacts} for:item="con">
+                    <div key={con.Id} class="slds-box">
+                        <div class="slds-box slds-grid slds-wrap">
+                            <div class="slds-col slds-medium-size_6-of-12">
+                                <div><strong>First Name  :&nbsp;&nbsp;</strong>{con.FirstName}</div>
+                                <div><strong>Last Name   :&nbsp;&nbsp;</strong>{con.LastName}</div>
+                                <div><strong>Phone       :&nbsp;&nbsp;</strong>{con.Phone}</div>
+                            </div>
+                            <div class="slds-col slds-medium-size_6-of-12">
+                                <lightning-button label="View" title="View" variant="brand" onclick={viewHandler}></lightning-button>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

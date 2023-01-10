@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Wire Imperative Method">
+        <div class="slds-m-around_medium">
+            <lightning-button label="Show Accounts" title="Show Accounts" 
+             onclick={clickHandler} class="slds-m-around_x-small"></lightning-button>
+
+            <template if:true={accounts}>
+                <template for:each={accounts} for:item="account">
+                    <div class="slds-box" key={account.Id}>
+                        <div><strong>Name : </strong>{account.Name}</div>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

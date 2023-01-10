@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Account Data">
+        <div class="slds-m-around_medium slds-grid slds-gutters">
+            <div class="slds-col">
+                <template if:true={accounts}>
+                    <template for:each={accounts} for:item="account">
+                        <div class="slds-card " data-record-id={account.Id} onclick={recordIdHandler} key={account.Id}>
+                            <div>recordId :{account.Id}</div>
+                            <div>Name :{account.Name}</div>
+                            <div>Rating :{account.Rating}</div>
+                            <div>Industry :{account.Industry}</div>
+                            <lightning-button 
+                                label="Show Contacts" 
+                                title="Show Contacts" 
+                                variant="brand" 
+                                onclick={showContacts}
+                                class="slds-m-around_medium">
+                            </lightning-button>  
+                        </div>
+                    </template>
+                </template>
+            </div>
+
+            <div class="slds-col">
+                <template if:true={contactsData}>
+                    <div class="slds-m-around_medium">
+                        <lightning-datatable
+                            key-field="Id"
+                            data={contacts}
+                            columns={columns}>
+                        </lightning-datatable>
+                    </div>
+                </template>   
+            </div>
+
+        </div>
+    </lightning-card>
+</template>

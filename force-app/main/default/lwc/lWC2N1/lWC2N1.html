@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Membership Form">
+        <div class="slds-m-around_medium">
+            <div class="slds-p-around_small" style="font-size:larger" >
+                <strong>{message}</strong>
+            </div>
+            <lightning-input label="First Name" value="Enter Your First Name" class="slds-p-bottom_small"></lightning-input>
+            <lightning-input label="Last Name" value="Enter Your Last Name" class="slds-p-bottom_small"></lightning-input>
+            <lightning-input label="Mobile No." value={phone} onchange={mobileHanlder} class="slds-p-bottom_small"></lightning-input>
+            <template if:true={showChechMembershipButton}>
+                <lightning-button label="Check Membership" variant="brand" onclick={membershipHandler} class="slds-p-horizontal_x-small"></lightning-button>
+            </template>
+            <template if:true={show}>
+                <lightning-button label="Recheck" variant="brand" onclick={recheckHandler1} class="slds-p-horizontal_x-small"></lightning-button>
+            </template>
+            <template if:true={showRenewButton}>
+                <lightning-button label="Renew Subscription" variant="brand" onclick={renewHanlder} class="slds-p-horizontal_x-small"></lightning-button>
+                <lightning-button label="Recheck" variant="brand" onclick={recheckHandler} class="slds-p-horizontal_x-small"></lightning-button>
+            </template>
+            <template if:true={showCreateSubscription}>
+                <lightning-button label="Create LensKart Subscription" variant="brand" onclick={SubscriptionHanlder} class="slds-p-horizontal_x-small"></lightning-button>
+                <lightning-button label="Recheck" variant="brand" onclick={recheckHandler} class="slds-p-horizontal_x-small"></lightning-button>
+
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="p2c Pimitive Datatype Parent Component demo 3">
+        <div class="slds-m-around_medium">
+            <c-p2c-child-component-demo3
+            name={parentName}
+            first-name={newFirstName}
+            is-true
+            ></c-p2c-child-component-demo3>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="p2c Non-Pimitive Datatype Parent Component demo 3">
+        <div class="slds-m-around_medium">
+            <c-p2c-child-component-demo3
+            acc-list={AccountList}
+            ></c-p2c-child-component-demo3>
+        </div>
+    </lightning-card>
+</template>

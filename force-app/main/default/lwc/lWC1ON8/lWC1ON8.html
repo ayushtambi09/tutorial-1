@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="LWC 1 ON 8">
+        <div class="slds-m-around_medium">
+            <div class="slds-p-top_small text-align-absolute_center"><Strong>Selected State : {selectedState}</Strong></div>
+            <div class="slds-p-vertical_small text-align-absolute_center"><Strong>Selected City : {selectedCity}</Strong></div>
+
+            <lightning-combobox
+            label="State"
+            options={stateOptions}
+            onchange={stateHandler}
+            value={selectedState}
+            class="slds-p-bottom_small"
+            ></lightning-combobox>
+
+            <lightning-combobox
+            label="City"
+            options={cityOptions}
+            onchange={cityHandler}
+            value={selectedCity}
+            ></lightning-combobox>
+        </div>
+    </lightning-card>
+</template>

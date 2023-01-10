@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="p2c Child Component">
+        <div class="slds-m-around_medium">
+            <div><strong>{name}</strong></div>
+            <div><strong>{firstName}</strong></div>
+            <div><strong>{isTrue}</strong></div>
+        </div>
+    
+
+
+        <div class="slds-m-around_medium">
+            <template if:true ={accList}>
+                <template for:each={accList} for:item="acc">
+                    <div class="slds-box" key={acc.Id}>
+                        <div><strong>Account Id : {acc.Id}</strong></div>
+                        <div><strong>Account Name : {acc.Name}</strong></div>
+                        <div><strong>Account Standard : {acc.standard}</strong></div>
+                    </div>
+                    
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

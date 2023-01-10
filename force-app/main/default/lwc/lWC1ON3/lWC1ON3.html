@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="LWC 1 ON 3">
+        <div class="slds-m-around_medium">
+
+            <div class="slds-p-vertical_small">
+                <lightning-input type="search" onchange={searchHandler}  value={searchName}></lightning-input>
+            </div>
+            <div class="slds-p-bottom_small">
+                <lightning-input type="checkbox" onchange={checkboxHandler}></lightning-input>
+            </div>
+
+            <template if:true={showChild}>
+                <c-l-w-c1-o-n3-child-component
+                search-acc-name={searchName}
+                ></c-l-w-c1-o-n3-child-component>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

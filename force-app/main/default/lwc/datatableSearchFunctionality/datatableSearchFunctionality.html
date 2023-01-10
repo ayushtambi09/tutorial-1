@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Account Data">
+        <div slot="actions" >
+            <lightning-button label="Mass Delete" title="Mass Delete" onclick={handleDelete} variant="brand"></lightning-button>
+        </div>
+
+        <lightning-input class="slds-p-around_medium" type="search" onchange={searchHandler}></lightning-input>
+        <div style="height:500px" class="slds-m-horizontal_small">
+            <lightning-datatable
+            key-field="Id"
+            data={accountData}
+            columns={columns}
+            onrowaction={handlerRowAction}
+            onrowselection={handlerRowSelection}
+            class="slds-m-bottom_medium">
+            </lightning-datatable>
+           
+        </div>
+    </lightning-card>
+    
+</template>

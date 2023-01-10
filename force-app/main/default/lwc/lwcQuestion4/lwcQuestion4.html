@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="ANS =>4 SELECT FROM PICKLIST">
+        <div class="slds-m-around_medium">
+            <lightning-combobox
+            name="Stage Name"
+            label="Stage Name"
+            options={typeOptions}
+            onchange={typeHandler}
+            value={stage}></lightning-combobox>
+
+            <div class="slds-m-around_medium">
+                <template if:true={optyList.data}>
+                    <lightning-datatable
+                    key-field="Id"
+                    data={optyList.data}
+                    columns={columns}></lightning-datatable>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

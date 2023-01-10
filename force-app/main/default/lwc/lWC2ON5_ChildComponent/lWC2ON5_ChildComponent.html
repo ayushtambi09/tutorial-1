@@ -1,0 +1,12 @@
+<template>
+    <form onsubmit={submitHanlder} class="ff">
+        <lightning-card title="Create Account">
+            <lightning-input label="Name" name="Name" onchange={fieldHandler} class="slds-p-horizontal_small" required></lightning-input>
+            <lightning-input label="Industry" name="Industry" onchange={fieldHandler} class="slds-p-around_small"></lightning-input>
+            <lightning-input label="Annual Revenue" name="AnnualRevenue" onchange={fieldHandler} class="slds-p-horizontal_small"></lightning-input>
+            <lightning-input label="Ownership" name="Ownership" onchange={fieldHandler} class="slds-p-around_small"></lightning-input>
+            <lightning-input label="Rating" name="Rating" onchange={fieldHandler} class="slds-p-bottom_small slds-p-horizontal_small"></lightning-input>
+            <lightning-button type="submit" label="Create" variant="brand" class="slds-p-bottom_small slds-p-horizontal_small"></lightning-button>  
+        </lightning-card>
+    </form>
+</template>

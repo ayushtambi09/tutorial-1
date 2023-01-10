@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Wire Apex Method Lead Object">
+        <div class="slds-m-around_medium">
+            <lightning-combobox 
+            name="status"
+            label="Select Status"
+            value={status}
+            options={statusOptions}
+            onchange={changeHandler}></lightning-combobox>
+            <template if:true={leads}>
+                <template for:each={leads.data} for:item="lead">
+                    <div class="slds-box" key={lead.Id}>
+                        <div><strong>Id :</strong>{lead.Id}</div>
+                        <div><strong>First Name :</strong>{lead.FirstName}</div>
+                        <div><strong>Last Name :</strong>{lead.LastName}</div>
+                        <div><strong>Company :</strong>{lead.Company}</div>
+                        <div><strong>Status :</strong>{lead.Status}</div>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

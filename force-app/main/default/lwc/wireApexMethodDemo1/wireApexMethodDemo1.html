@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="Wire Apex Method Property Demo 1">
+        <div class="slds-m-around_medium">
+            <template if:true={account}>
+                <template for:each={account.data} for:item="account">
+                    <div class="slds-box" key={account.Id}>
+                        <div>Account Id : {account.Id}</div>
+                        <div>Account Name : {account.Name}</div>
+                        <div>Account Phone : {account.Phone}</div>
+                        <div><strong>Account Type:</strong>{account.Type}</div>
+                        <div> Account Industry :{account.Industry}</div>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Wire Apec Method Function Demo 1">
+        <div class="slds-m-around_medium">
+            <template if:true={accountList}>
+                <template for:each={accountList} for:item="account">
+                    <div class="slds-box" key={account.Id}>
+                        <div><strong>Account Id:</strong>{account.Id}</div>
+                        <div><strong>Account Name:</strong>{account.Name}</div>
+                        <div><strong>Account Industry:</strong>{account.Industry}</div>
+                        <div><strong>Account Type:</strong>{account.newType}</div>
+                        <div><strong>Account Phone:</strong>{account.Phone}</div>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

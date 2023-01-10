@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="Template For:each Looping Demo">
+        <div class="slds-m-around_medium">
+            <template for:each={AccountInfo} for:item="Account">
+                <ul key={Account.SrNo} class="slds-has-dividers_around-space slds-m-around_xx-small">
+                    <li>Sr.No :{Account.SrNo}</li>
+                    <li>Name  :{Account.Name}</li>
+                    <li>Phone :{Account.Phone}</li>
+                    <li>Email :{Account.Email}</li>                 
+                </ul>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Template Iterator Looping">
+        <div class="slds-m-around_medium">
+            <template iterator:account={AccountInfo}>
+                <ul key={account.SrNo}>
+                    <template if:true={account.first}>
+                        <div><strong>List Of Account with Details</strong></div>
+                    </template>
+                    <li>Sr.No :{account.value.SrNo}</li>
+                    <li>Name  :{account.value.Name}</li>
+                    <li>Phone :{account.value.Phone}</li>
+                    <li>Email :{account.value.Email}</li>   
+                    <template if:true ={account.last}>
+                        <div><strong>Thank You..!!</strong></div>
+                    </template>
+                </ul>
+            </template>
+        </div>
+    </lightning-card>
+</template>

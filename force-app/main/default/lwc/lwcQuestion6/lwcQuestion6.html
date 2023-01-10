@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="ANS =>6">
+        <div class="slds-m-around_medium">
+
+            <div class="slds-box slds-p-around_small">
+                BMI :<strong>{bmi}</strong>{msg} 
+            </div>
+
+
+            <lightning-input 
+            label="Weight"
+            name="weight"
+            onchange={weightChangeHandler}
+            ></lightning-input>
+
+            <lightning-input
+            label="Height"
+            name="height"
+            onchange={heightChangeHandler}
+            ></lightning-input>
+
+            <lightning-button 
+            label="Calculate"
+            title="Calculate"
+            variant="brand"
+            onclick={calculateHandler}></lightning-button>
+
+
+        </div>
+    </lightning-card>
+</template>

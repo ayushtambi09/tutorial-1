@@ -1,0 +1,36 @@
+<template>
+    <div class="slds-grid slds-wrap">
+
+
+        <!-- create Record form section -->
+        <div class="slds-col slds-medium-size_6-of-12">
+            <lightning-card title="Create Account Record">
+                <div class="slds-m-around_medium">
+                    <lightning-record-edit-form
+                    object-api-name={accountObj}
+                    onsuccess={successHandler}>
+                    <lightning-input-field field-name="Name"> </lightning-input-field>
+                    <lightning-input-field field-name="Phone"> </lightning-input-field>
+                    <lightning-input-field field-name="Industry"> </lightning-input-field>
+                    <lightning-input-field field-name="Rating"> </lightning-input-field>
+                    <lightning-button type="submit" name="submit" label="Create Account" 
+                    class="slds-m-right_large" onclick={submitHandler}></lightning-button>
+                    </lightning-record-edit-form>
+                </div>
+            </lightning-card>
+        </div>
+
+
+
+        <!-- Datatable section -->
+        <div class="slds-col slds-medium-size_6-of-12">
+            <div class="slds-m-around_medium">
+                <lightning-datatable 
+                key-field="Id"
+                data={accountData}
+                columns={columns}>
+                </lightning-datatable>
+            </div>
+        </div>
+    </div>
+</template>

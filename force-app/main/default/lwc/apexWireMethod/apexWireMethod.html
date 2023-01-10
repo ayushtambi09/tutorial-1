@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="Apex Wire Method Demo 4">
+        <div class="slds-m-around_medium">
+            <template if:true = {accounts.data}>
+                <template for:each = {accounts.data} for:item="account">
+                    <div class="slds-box" key={account.Id}>
+                        <div><strong>AccountId :</strong>{account.Id}</div>
+                        <div><strong>Name :</strong>{account.Name}</div>
+                        <div><strong>Industry :</strong>{account.Industry}</div>
+                        <div><strong>Phone :</strong>{account.Phone}</div>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Search Account Demo 4">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Search Account" title="Search Acoount" type="search" value={searchName} onchange={searchHandeler}></lightning-input>
+            <div class="slds-m-around_medium">
+                <template if:true = {accountList}>
+                    <template for:each = {accountList} for:item="account">
+                        <div class="slds-box" key={account.Id}>
+                            <div><strong>AccountId :</strong>{account.Id}</div>
+                            <div><strong>Name :</strong>{account.Name}</div>
+                            <div><strong>Industry :</strong>{account.Industry}</div>
+                            <div><strong>Phone :</strong>{account.Phone}</div>
+                            <lightning-button label="View Details" title="View Details" variant="brand" class="slds-p-around_medium" onclick={viewHandler}></lightning-button>
+                        </div>
+                    </template>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

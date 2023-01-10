@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Parent Component">
+        <div class="slds-m-around_medium">
+            <div>What is your name ?</div>
+            <div><slot name="name"></slot></div>
+            <div>What is your Course Name ?</div>
+            <div><slot name="courseName"></slot></div>
+            <footer class="slds-card__footer slds-hide">
+                <slot name="footer" onslotchange={handlerFooterChange}></slot>
+            </footer>
+        </div>
+    </lightning-card>
+</template>

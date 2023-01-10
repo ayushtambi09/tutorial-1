@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Create Contact List View">
+
+
+        <div slot="actions">
+            <lightning-button label="Create Contact" onclick={navigateToNewRecordPage} variant="brand"></lightning-button>
+            <lightning-button label="Delete Selected Contacts" onclick={deleteSelectedContacts} variant="brand" class="slds-p-left_small"></lightning-button>
+        </div>
+
+        <div class="slds-card__body_inner">
+
+            <p  class="slds-p-left_x-small" style="background-color:darkgrey"><strong>Selected Contacts: {selectedContactsLen}</strong></p>
+
+            <div class="slds-p-bottom_small slds-p-left_small slds-grid slds-gutters slds-align_absolute-center">
+                <lightning-input type="search" onchange={handleSearch}></lightning-input>
+            </div>
+
+            <lightning-datatable
+            key-field="Id"
+            data={contacts}
+            columns={columns}
+            onrowselection={handlerRowSelection}
+            onrowaction={handleRowAction}
+            ></lightning-datatable>
+        </div>
+
+
+
+    </lightning-card>
+</template>
+
+
+
+

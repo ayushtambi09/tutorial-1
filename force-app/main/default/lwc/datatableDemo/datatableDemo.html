@@ -1,0 +1,21 @@
+<template>
+    <div style="height:300px">
+
+
+        <!-- Datatable for showing the Account data on UI -->
+        <lightning-datatable 
+        key-field="Id"
+        data={accounts.data}
+        columns={columns}
+        onsave={saveHandler}
+        draft-values={draftValues}
+        show-row-number-column 
+        hide-checkbox-column>
+        </lightning-datatable>
+
+
+
+
+    </div>
+    
+</template>

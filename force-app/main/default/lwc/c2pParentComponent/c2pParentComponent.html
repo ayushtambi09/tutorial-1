@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Parent Component">
+        <div class="slds-m-around_medium">
+            <h1 style="color:green"><b>{msg}</b></h1>
+           <template if:true={showChild}>
+                <c-c2p-child-component
+                onhide={closeHandler}
+                ></c-c2p-child-component>
+            </template>
+            <lightning-button label="Show Child" title="Show Child" onclick={showHandler}></lightning-button>
+            
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="ANS => 2 Search Account">
+        <div class="slds-m-around_medium">
+            <lightning-input 
+                label="Search Account" 
+                title="Search Account" 
+                value={searchkey} 
+                onchange={searchHandler}
+                class="slds-m-around_medium">
+            </lightning-input>
+            <template if:true={accounts}>
+                <div class="slds-p-around_medium">
+                    <lightning-datatable
+                        key-field="Id"
+                        data={accounts}
+                        columns={columns}>
+                    </lightning-datatable>
+                </div>     
+            </template>
+            
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Wire Apex Method With Para Demo 1">
+        <div class="slds-m-around_medium">
+
+            <lightning-combobox
+            name="type"
+            label="Select Type"
+            value={selectedValue}
+            options={typeOptions}
+            onchange={typeHandler}></lightning-combobox>
+            <template if:true={accounts}>
+                <template for:each={accounts.data} for:item="account">
+                    <div class="slds-box" key={account.Id}>
+                        <div><strong>Account Name: </strong>{account.Name}</div>
+                        <div><strong>Account Type: </strong>{account.Type}</div>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

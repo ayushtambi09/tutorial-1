@@ -1,0 +1,52 @@
+<template>
+    <lightning-card title="LWC 2 ON 3">
+        <div class="slds-m-around_medium">
+            <lightning-checkbox-group name="Checkbox Group"
+            label="Checkbox Group"
+            options={options}
+            value={value}
+            onchange={handleChange}>
+            </lightning-checkbox-group>
+        </div>
+        <div class="slds-p-around_small">
+            <lightning-button label="Fill Form" onclick={clickHandler}></lightning-button>
+        </div>
+
+        <template if:true={showForm}>
+            <div class="slds-p-horizontal_x-small">
+                <template if:true={showFirstName}>
+                    <lightning-input label="First Name"></lightning-input>
+                </template>
+                <template if:true={showLastName}>
+                    <lightning-input label="Last Name"></lightning-input>
+                </template>
+                <template if:true={ShowEmail}>
+                    <lightning-input label="Email"></lightning-input>
+                </template>
+                <template if:true={showPhone}>
+                    <lightning-input label="Phone"></lightning-input>
+                </template>
+                <template if:true={showEducation}>
+                    <lightning-input label="Education"></lightning-input>
+                </template>
+                <template if:true={showAddress}>
+                    <lightning-input label="Address"></lightning-input>
+                </template>
+                <template if:true={showCompanyName}>
+                    <lightning-input label="Company Name"></lightning-input>
+                </template>
+                <template if:true={showSalary}>
+                    <lightning-input label="Salary"></lightning-input>
+                </template>
+                <template if:true={showPanCardNumber}>
+                    <lightning-input label="Pan Card Number"></lightning-input>
+                </template>
+                <template if:true={showAadharCarNumber}>
+                    <lightning-input label="Aadhar Car Number"></lightning-input>
+                </template>
+            </div>
+        </template>
+
+        
+    </lightning-card>
+</template>

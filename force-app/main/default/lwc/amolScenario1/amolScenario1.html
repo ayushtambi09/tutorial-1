@@ -1,0 +1,59 @@
+<template>
+    <lightning-card title="Scenerio 1">
+        <div class="slds-m-around_medium slds-grid slds-wrap">
+            <!-- Account search column START -->
+            <div class="slds-col slds-medium-size_6-of-12">
+
+                <lightning-input label="Search Account" type="search" onchange={searchHandler} value={searchAccValue}
+                    class="slds-m-around_medium">
+                </lightning-input>
+
+                <!-- Account records shown -->
+                <template if:true={accData}>
+                    <template for:each={accData} for:item="acc">
+                        <div key={acc.Id} class="slds-box slds-grid slds-wrap">
+                            <!-- <div class=""> -->
+                            <div class="slds-col slds-medium-size_6-of-12">
+                                <div><Strong>Name :&nbsp;</Strong>{acc.Name}</div>
+                                <div><Strong>Industry :&nbsp;</Strong>{acc.Industry}</div>
+
+                            </div>
+                            <div class="slds-col slds-medium-size_6-of-12">
+                                <div class=" slds-m-around_medium" data-record-id={acc.Id} onclick={recordIdHandler}>
+                                    <lightning-button label="Contacts" title="Contacts" variant="brand"
+                                        onclick={relatedContactHanlder} class="slds-m-around_medium">
+                                    </lightning-button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+            </div>
+            <!-- Account search column  OVER -->
+            <!-- Contact record column START-->
+            <div class="slds-col slds-medium-size_6-of-12">
+                <template if:true={contactData}>
+                    <template for:each={contactData} for:item="con">
+                        <div key={con.Id} class="slds-box slds-box slds-grid slds-wrap"
+                            style="background-color:rgb(130, 174, 255)">
+                            <div class="slds-col slds-medium-size_6-of-12">
+                                <div><strong>Name :</strong>{con.FirstName} {con.LastName}</div>
+                            </div>
+                            <div class="slds-col slds-medium-size_6-of-12">
+                                <div data-record-id={con.Id} onclick={contactIdHandler}>
+                                    <lightning-button label="Details" title="Details" variant="brand"
+                                        onclick={detailPageHandler}>
+                                    </lightning-button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </template>
+                </template>
+            </div>
+            <!-- Contact record column OVER-->
+        </div>
+
+    </lightning-card>
+</template>
