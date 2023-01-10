@@ -48,9 +48,9 @@ public with sharing class AccountContactController {
         return [SELECT Id,AccountId,FirstName,LastName,Phone,Email FROM Contact WHERE AccountId =:accIdss];
     }
 
-   /* @AuraEnabled (cacheable =true)
+    @AuraEnabled (cacheable =true)
     public static  List<Account> getsearchAccValuett(String searchAccValue){
         String key = '%' + searchAccValue + '%';
         return [SELECT Id,Name,Rating,Industry,Ownership,AnnualRevenue,Phone FROM Account WHERE Name LIKE :key];
-    }*/
+    }
 }
